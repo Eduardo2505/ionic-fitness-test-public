@@ -1,0 +1,17 @@
+<ion-tabs (ionTabsDidChange)="setSelectedTab($event)">
+  <ion-tab-bar slot="bottom">
+    
+
+   
+
+    <ion-tab-button tab="courses">
+      <ion-icon [name]="selected === 'courses' ? 'albums' : 'albums-outline'"></ion-icon>
+    </ion-tab-button>
+
+   
+
+    <ion-tab-button >
+      <ion-icon [name]="'close-outline'" (click)="close()"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

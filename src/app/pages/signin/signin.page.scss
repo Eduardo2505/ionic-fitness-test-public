@@ -1,0 +1,111 @@
+ion-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 34px;
+  font-family: "Bebas Neue", cursive !important;
+  background: -webkit-linear-gradient(
+    var(--ion-color-primary),
+    var(--ion-color-tertiary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.errors-container {
+  font-size: 13px;
+  line-height: 30px;
+  color: var(--ion-color-light);
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  .btn-forgot {
+    text-transform: inherit;
+  }
+}
+
+ion-item {
+  --border-color: var(--ion-color-medium);
+  --highlight-color-invalid: var(--ion-color-light) !important;
+  --highlight-color-focused: var(--ion-color-light) !important;
+  --padding-top: 0 !important;
+  --padding-bottom: 0 !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+
+  ion-input {
+    font-size: 13px;
+    min-height: 48px !important;
+  }
+}
+
+.caption-text {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+  text-align: center;
+  padding: 0 16px;
+  line-height: 22px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.social-btn {
+  min-width: 150px;
+  margin: 0 8px;
+
+  ion-text {
+    padding-left: 16px;
+    font-size: 13px;
+    text-transform: capitalize;
+  }
+
+  ion-icon {
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-message {
+  span,
+  a {
+    font-size: 13px;
+  }
+
+  span {
+    color: var(--ion-color-medium);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--ion-color-light);
+    font-weight: 500;
+    margin-left: 6px;
+  }
+}
+@media (max-device-height: 640px), handheld and (orientation: portrait) {
+  .errors-container {
+    font-size: 12px;
+  }
+}

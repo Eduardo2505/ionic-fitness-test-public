@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>{{ course?.bodyPart }}</ion-title>
+      <ion-buttons slot="end">
+
+        <ion-button>
+          <ion-icon color="medium" slot="icon-only" name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <img [src]="course.gifUrl" />
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-padding-horizontal">
+    <ion-row>
+      <ion-col class="ion-padding-top">
+        <ion-text class="article-title"> {{ course?.nameEjercise }} </ion-text>
+        <div class="article-footer">
+          <div>
+            <ul>
+              <li>
+                <ion-item lines="none">
+                  <ion-icon color="danger" name="heart"></ion-icon>
+                  <ion-label>{{ course?.equipment }}</ion-label>
+                </ion-item>
+              </li>
+              <li>
+                <ion-item lines="none">
+                  <ion-icon color="medium" name="people-outline"></ion-icon>
+                  <ion-label>{{ course?.bodyPart }} </ion-label>
+                </ion-item>
+              </li>
+              <li>
+                <ion-item lines="none">
+                  <ion-icon color="medium" name="fitness-outline"></ion-icon>
+                  <ion-label>{{ course?.nameEjercise }}</ion-label>
+                </ion-item>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </ion-col>
+
+
+    </ion-row>
+    <ion-row >
+      <div style=" font-size: 40px" >
+        <ion-icon name="{{index>numex?'star-outline':'star'}}" (click)="changeRating(index)" *ngFor="let a of numberarray; let index = index"></ion-icon>
+        
+  
+   
+      </div>
+      
+    </ion-row>
+
+    <ion-row>
+
+      <ion-button expand="round" [disabled]="!_verificar"  fill="outline" (click)="calificar()">Calificar</ion-button>
+      <ion-button shape="round" fill="outline" (click)="goBack()">Salir</ion-button>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

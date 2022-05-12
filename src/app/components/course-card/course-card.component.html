@@ -1,0 +1,21 @@
+<ion-card class="ion-no-margin">
+  <ion-card-content class="ion-no-padding">
+    <span class="badge">Nuevo</span>
+    <img [src]="image" />
+    <ion-card-title>{{ title }}</ion-card-title>
+    <div class="icon-container">
+      <ul>
+        <li>
+          <ion-icon color="medium" name="time-outline"></ion-icon>
+        </li>
+        <li>{{ duration }}</li>
+      </ul>
+      <ul>
+        <li>
+          <ion-icon color="medium" name="disc-outline"></ion-icon>
+        </li>
+        <li>{{ bodyArea }}</li>
+      </ul>
+    </div>
+  </ion-card-content>
+</ion-card>

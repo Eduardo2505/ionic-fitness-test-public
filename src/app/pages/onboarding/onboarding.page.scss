@@ -1,0 +1,70 @@
+ion-grid {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.flexend-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.flexend-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 55px;
+  font-family: "Bebas Neue", cursive !important;
+  // color: var(--ion-color-tertiary);
+  line-height: 60px;
+  background: -webkit-linear-gradient(
+    var(--ion-color-primary),
+    var(--ion-color-tertiary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ion-text {
+  color: var(--ion-color-light);
+}
+
+ion-button {
+  box-shadow: none !important;
+  min-height: 50px;
+
+  ion-text {
+    font-family: "Bebas Neue", cursive !important;
+    padding-right: 16px;
+    font-size: 22px;
+    line-height: 21px;
+  }
+
+  ion-icon {
+    color: #fff;
+    font-size: 22px;
+  }
+}
+
+@media (max-device-height: 640px), handheld and (orientation: portrait) {
+  h1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  ion-text {
+    font-size: 14px;
+  }
+}

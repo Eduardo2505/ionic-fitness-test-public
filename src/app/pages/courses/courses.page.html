@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    
+    <ion-buttons slot="end">
+      
+      <ion-input color="medium" placeholder="Buscar ..." type="text" (change)="loadDatax()" [(ngModel)]="buscar"></ion-input>
+      
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ejercicios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid *ngIf="_cargando">
+    <ion-row class="ion-padding">
+      <ion-col size="6" *ngFor="let course of _resultList"> 
+        <app-course-card
+        [new]="course.target"
+        [image]="course.gifUrl"
+        [title]="course.nameEjercise"
+        [duration]="course.bodyPart"
+        [bodyArea]="course.target"
+        (click)="goToDetail(course.id)"
+        ></app-course-card>
+      </ion-col>
+    </ion-row>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando informacion...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-grid>
+  <ion-grid *ngIf="!_cargando">
+    <ion-row class="ion-padding">
+      Cargando ...
+    </ion-row>
+  </ion-grid>
+</ion-content>

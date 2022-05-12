@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/signup" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-padding full-height">
+    <ion-row>
+      <ion-col>
+        <ion-text class="title ion-margin-bottom">Ingresar</ion-text>
+        <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+          <ion-row class="input-container ion-no-padding">
+            <ion-col>
+              <ion-item class="ion-no-padding">
+                <ion-label color="medium" position="stacked"
+                  >Usuario</ion-label
+                >
+                <ion-input type="text" formControlName="username"></ion-input>
+              </ion-item>
+
+              
+            </ion-col>
+          </ion-row>
+          <ion-row class="input-container ion-no-padding">
+            <ion-col>
+              <ion-item class="ion-no-padding">
+                <ion-label color="medium" position="stacked"
+                  >Contraseña</ion-label
+                >
+                <ion-input
+                  type="password"
+                  formControlName="pass"
+                ></ion-input>
+              </ion-item>
+             
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-padding-top">
+              <ion-button
+                [disabled]="loginForm.invalid"
+                class="cta-button"
+                expand="block"
+                fill="solid"
+                type="submit"
+              >
+                <span>Ingresar</span>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-padding-top" style="text-align:center;color:red">
+             {{msn}}
+            </ion-col>
+          </ion-row>
+        </form>
+     
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <div class="login-message">
+          <span>¿No tienes una cuenta?</span><a routerLink="/signup">Regístrate</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
